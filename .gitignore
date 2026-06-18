@@ -1,0 +1,4 @@
+policy-sphere-frontend-react/node_modules/
+policy-sphere-backend-springboot/target/
+policy-sphere-backend-springboot/bin/
+policy-sphere-backend-springboot/uploads/
