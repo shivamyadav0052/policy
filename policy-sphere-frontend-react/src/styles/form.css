@@ -1,0 +1,195 @@
+.form-container {
+  width: min(420px, 90vw);
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(13, 38, 83, 0.16);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), #e8f2ff);
+  border: 1px solid rgba(74, 134, 215, 0.22);
+  text-align: left;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.brand-area {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.brand-area .badge {
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eef6ff;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.brand-area h2 {
+  font-size: 1.55rem;
+  margin: 0;
+  color: #1f3f79;
+}
+
+.brand-area p {
+  color: #4f6392;
+  font-size: 0.92rem;
+  margin: 4px 0 0;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+.field-group {
+  display: grid;
+  gap: 6px;
+}
+
+.field-group label {
+  color: #325385;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid #b3d4ff;
+  background: #ffffff;
+  color: #1c2f56;
+  box-shadow: 0 4px 10px rgba(86, 124, 182, 0.12);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3574db;
+  box-shadow: 0 0 0 3px rgba(53, 116, 219, 0.16);
+}
+
+.btn-primary {
+  padding: 12px 16px;
+  background: linear-gradient(120deg, #3984f7, #3d5fe7);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(58, 94, 205, 0.35);
+}
+
+.btn-secondary {
+  padding: 10px 14px;
+  background: #485ea6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #2e4ea1;
+}
+
+.switch-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.link-btn {
+  border: none;
+  color: #2a63d2;
+  background: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.92rem;
+  padding: 0;
+}
+
+.link-btn:hover {
+  color: #1a4cb9;
+}
+
+.dashboard-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  margin-top: 14px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.message-info {
+  color: #1d3f6d;
+  background: #eaf2ff;
+  border: 1px solid #aac1ff;
+}
+
+.message-success {
+  color: #115234;
+  background: #e6fbec;
+  border: 1px solid #8fce97;
+}
+
+.message-error {
+  color: #8a1f21;
+  background: #ffe8e9;
+  border: 1px solid #e3a7aa;
+}
+
+.app-shell {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(150deg, #f8fbff, #dbe9ff);
+  padding: 24px 12px 40px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.top-nav button {
+  border: 1px solid #bad4ff;
+  border-radius: 999px;
+  background: #f4faff;
+  color: #1f4274;
+  padding: 8px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.top-nav button:hover {
+  background: #d9edff;
+  transform: translateY(-1px);
+}
+
+.top-nav button.active {
+  background: #3d76e9;
+  color: #fff;
+  border-color: #3160c4;
+}
+
