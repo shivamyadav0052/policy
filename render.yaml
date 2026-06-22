@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: policy-sphere-backend
+    runtime: java
+    runtimeVersion: "17"
+    buildCommand: "cd policy-sphere-backend-springboot && mvn clean package -DskipTests"
+    startCommand: "java -jar policy-sphere-backend-springboot/target/insurance-policy-management-0.0.1-SNAPSHOT.jar"
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: ${DATABASE_URL}
+      - key: SPRING_DATASOURCE_USERNAME
+        value: ${DATABASE_USER}
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ${DATABASE_PASSWORD}
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SERVER_PORT
+        value: 10000
+
+  - type: static
+    name: policy-sphere-frontend
+    buildCommand: "cd policy-sphere-frontend-react && npm install && npm run build"
+    staticPublishDir: policy-sphere-frontend-react/build
+    routes:
+      - path: /api
+        destination: http://policy-sphere-backend:10000/api
