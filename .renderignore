@@ -3,5 +3,8 @@ node_modules
 .gitignore
 target/
 bin/
-.DS_Store
 *.log
+.DS_Store
+.idea/
+*.iml
+policy-sphere-frontend-react/
