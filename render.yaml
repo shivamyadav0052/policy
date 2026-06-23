@@ -1,0 +1,40 @@
+# Render.com configuration for both backend (web service) and frontend (static site)
+# Replace `your-github-repo` and `your-github-user` with your GitHub repo details.
+
+services:
+  - type: web
+    name: insurance-backend
+    env: docker
+    plan: free
+    repo: "your-github-user/your-github-repo"
+    branch: main
+    dockerfilePath: policy-sphere-backend-springboot/Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromSecret: DB_URL
+      - key: SPRING_DATASOURCE_USERNAME
+        fromSecret: DB_USER
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromSecret: DB_PASS
+      - key: JWT_SECRET
+        fromSecret: JWT_SECRET
+
+static_sites:
+  - type: static_site
+    name: insurance-frontend
+    repo: "your-github-user/your-github-repo"
+    branch: main
+    rootDir: policy-sphere-frontend-react
+    buildCommand: npm install && npm run build
+    publishPath: policy-sphere-frontend-react/build
+    autoDeploy: true
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://<replace-with-backend>.onrender.com"
+
+# Notes:
+# - Replace repo values with your GitHub "owner/repo".
+# - On Render dashboard, create the following secrets and map them to the keys used above:
+#   DB_URL, DB_USER, DB_PASS, JWT_SECRET
+# - Render will provide a public URL for the backend; set that URL as `REACT_APP_API_URL` for the frontend (either here or via Render dashboard env vars).
